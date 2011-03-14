@@ -1,0 +1,44 @@
+﻿@model MultiTenantAuthentication.ViewModels.ProfileCustomerViewModel
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<fieldset>
+    <legend>Current User Profile</legend>@*@Html.DisplayForModel()*@
+    <div>
+        Using TanentId: @Model.UserProfile.TenantId
+    </div>
+    <p>
+        First Name: @Model.UserProfile.FirstName
+    </p>
+    <p>
+        Last Name: @Model.UserProfile.LastName
+    </p>
+    <p>
+        Tenant Name: @Model.UserProfile.Tenant.Name
+    </p>
+    <br />
+    <div>
+        List of customer in Customer Table
+        @if (Model.Customers != null){
+            <table>
+                @foreach (var c in Model.Customers) {
+                <tr>
+                    <td>
+                        @c.Name
+                    </td>
+                    <td>
+                        @c.TenantId
+                    </td>
+                </tr>
+            
+            }
+            </table>
+        }
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Add profile", "AssignProfile")
+    @Html.ActionLink("Back to List", "Index")
+</p>

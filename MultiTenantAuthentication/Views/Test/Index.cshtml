@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@if (false){ <script src="../../Scripts/jquery-1.4.4-vsdoc.js" language="javascript"></script>}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert('JQuery doc.Ready test');
+    });
+</script>
+
+<h2>Index</h2>
+
+<div title="Test 1">
+<div>
+    <p>
+        @Html.ActionLink("Register new user (New company)", "CreateLogin") | @Html.ActionLink("Add user (existing company)", "AddLogin")  @*//todo: add user for existing tenant*@
+
+    </p>
+    
+    </div>
+    <p>
+        @Html.ActionLink("List My Customers", "ListCustomer") | @Html.ActionLink("List All Customers", "ListAllCustomer")
+    </p>
+</div>
+<div>
+    <p>
+        To Do:</p>
+    <p>
+        1. Save Tenant Id to hash table once the user is authenticated.
+    </p>
+</div>
